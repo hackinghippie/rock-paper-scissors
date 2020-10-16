@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+* {
+    padding: 0%;
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: rgb(83,195,236);
+    background: linear-gradient(90deg, rgba(83,195,236,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 77%, rgba(83,195,236,1) 100%);
+}
+
+#img-div {
+    text-align: center;
+    margin-top: 1%;
+}
+
+img {
+    width: 15%;
+    border-bottom: 10px rgb(255, 255, 255) solid;
+    transition-duration: 1s;
+}
+
+img:hover {
+    border-bottom: 10px rgb(194, 75, 194) solid;
+    transition-duration: 0.4s;
+}
+
+#greeting {
+    padding-top: 5%;
+    padding-bottom: 2%;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+h1 {
+    margin-bottom: 1%;
+    font-size: 1.9em;
+    font-family: 'Krona One', sans-serif;
+    color: rgb(194, 75, 194);
+}
+
+#scoreboard {
+    border-top: 0.5em rgb(194, 75, 194) solid;
+    border-bottom: 0.5em rgb(194, 75, 194) solid;
+    width: 12.5%;
+    padding: 1%;
+    margin-top: 5%;
+    width: 39vw;
+    margin-left: 30%;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+#blueSquare {
+    width: 42%;
+    height: 12%;
+    margin-top: -75px;
+    margin-left: -10px;
+    background-color: rgba(36, 205, 235, 0.774);
+    position: absolute;
+    z-index: -1;
+}
+
+@media(max-width: 1400px) {
+    img {
+        width: 18%;
+        transition-duration: 1s;
+    }
+    #blueSquare {
+        width: 43%;
+        margin-top: -70px;
+        margin-left: 0%;
+    }
+}
+
+@media(max-width: 1000px) {
+    img {
+        width: 25%;
+        transition-duration: 1s;
+    }
+    #scoreboard {
+        padding: 1%;
+        margin-top: 5%;
+        width: 55vw;
+        margin-left: 20%;
+    }
+    #blueSquare {
+        width: 60%;
+        margin-top: -68px;
+    }
+    body {
+        background: linear-gradient(90deg, rgba(83,195,236,1) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(83,195,236,1) 100%);
+    }
+}

@@ -3,9 +3,37 @@
 <head>
   <title>Rock, Paper, Scissors</title>
   <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div id="greeting">
+        <h1>Rock, Paper, Scissors.</h1>
+        <p>You versus Computer.</p>
+        <br>
+        <p>select an option:</p>
+    </div>
+
+
+    <div id="img-div">
+        <a href=""><img src="/images/rock.png" alt="" id="rockImg"></a>
+        <a href=""><img src="/images/paper.png" alt="" id="paperImg"></a>
+        <a href=""><img src="/images/scissors.png" alt="" id="scissorsImg"></a>
+    </div>
+
+    <div id="scoreboard">
+        <p>Round: </p>
+        <p>Your score: </p>
+        <p>Computer score: </p>
+        <div id = blueSquare></div>
+    </div>
+
   <script>
+
+    /*when the user clicks on img:*/
+    document.querySelectorAll("img");
+
+    img.addEventListener("img")
 
     function game() { 
         /*game statistics*/
@@ -14,21 +42,13 @@
         let roundNum = Number(1);
 
         /*the game will repeat for 5 rounds*/
-        while (roundNum <= 5) {        
+        /*while (roundNum <= 5) {  */      
             console.log("-------------------------")
             console.log("Round: " + roundNum);
             console.log("Your score: " + userScore)
             console.log("Computer score: " + computerScore)
 
             function round() {
-
-                /*user must input one of three options. *If* statement checks if input is legit*/
-                let input = prompt("Choose Rock, Paper or Scissors").toLowerCase();
-
-                if (input != "rock" && input != "scissors" && input != "paper") {
-                    alert("Not like that, dummy. try again!");
-                    round();
-                }
 
                 console.log("You chose: " + input);
             
@@ -87,8 +107,8 @@
         }
         round();
         } 
-    }
-    game();
+    /*}*/
+    /*game();*/
   </script>
 </body>
 </html>
