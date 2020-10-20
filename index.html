@@ -4,111 +4,46 @@
   <title>Rock, Paper, Scissors</title>
   <meta charset="UTF-8"/>
   <link rel="stylesheet" href="style.css">
+  
 </head>
-<body>
+<body id="body">
 
     <div id="greeting">
         <h1>Rock, Paper, Scissors.</h1>
         <p>You versus Computer.</p>
         <br>
-        <p>select an option:</p>
+        <button id = "startBtn">Start</button> <!-- when the user clicks btn, start game();*/ -->
     </div>
-
 
     <div id="img-div">
-        <a href=""><img src="/images/rock.png" alt="" id="rockImg"></a>
-        <a href=""><img src="/images/paper.png" alt="" id="paperImg"></a>
-        <a href=""><img src="/images/scissors.png" alt="" id="scissorsImg"></a>
+        <button class = "choiceBtn" id = "rockBtn"><img id="rockImg" class="img" src="images/rock.png" alt="rock image"></button>
+        <button class = "choiceBtn" id = "paperBtn"><img id="paperImg" class="img" src="images/paper.png" alt="paper image"></button>
+        <button class = "choiceBtn" id = "scissorsBtn"><img id="scissorsImg" class="img" src="images/scissors.png" alt="scissors image"></button>
     </div>
 
+    <div id="statusDiv">
+        <p id= "choice">&#8205;</p>
+        <p id="yourStatus">&#8205;</p>
+        <p id="compStatus">&#8205;</p>
+        <br><br>
+        <p id="statusP">&#8205;</p>
+    </div>
+
+    <div id="noPopUp">
+        <p id="noPopUpP"></p>
+        <button id = "noEndButton" onclick="window.location.reload();"></button>
+    </div>
+
+    <div id="noCoverUp"></div>
+
     <div id="scoreboard">
-        <p>Round: </p>
-        <p>Your score: </p>
-        <p>Computer score: </p>
+        <p id="roundP">Round: 0/5</p>
+        <p id="userScoreP">Your score: 0</p>
+        <p id="compScoreP">Computer score: 0</p>
         <div id = blueSquare></div>
     </div>
 
-  <script>
+    <script src="script.js"></script>
 
-    /*when the user clicks on img:*/
-    document.querySelectorAll("img");
-
-    img.addEventListener("img")
-
-    function game() { 
-        /*game statistics*/
-        let userScore = Number(0);
-        let computerScore = Number(0);
-        let roundNum = Number(1);
-
-        /*the game will repeat for 5 rounds*/
-        /*while (roundNum <= 5) {  */      
-            console.log("-------------------------")
-            console.log("Round: " + roundNum);
-            console.log("Your score: " + userScore)
-            console.log("Computer score: " + computerScore)
-
-            function round() {
-
-                console.log("You chose: " + input);
-            
-                /*comp picks a random element from the array*/
-                let options = ["rock", "paper",  "scissors"];
-                const computerPick = Math.floor(Math.random() * options.length); 
-                console.log("Computer chose: " + options[computerPick]);
-                
-                /*if else goes through all the options and alerts the game state*/
-                if (input === "rock" && computerPick === 0 || input === "paper" && computerPick === 1 || input === "scissors" && computerPick === 2) {
-                    alert("Tie! " + input + " vs. " + options[computerPick] + ".")
-                    roundNum++;
-
-                                                    /*0=rock, 1=paper, 2=scissors*/
-                } else if (input === "rock" && computerPick === 1) {
-                    alert("Oh schucks - rock loses to paper.")
-                    computerScore++;
-                    roundNum++;
-
-                } else if (input === "rock" && computerPick===2) {
-                    alert("Nice, rock destroys puny scissors.")
-                    userScore++;
-                    roundNum++;
-
-                } else if (input === "paper" && computerPick===0) {
-                    alert("Marvelous, paper covers rock for some reason.")
-                    userScore++;
-                    roundNum++;
-
-                } else if (input === "paper" && computerPick===2) {
-                    alert("Ouch, paper gets cut apart by scissors.")
-                    computerScore++;
-                    roundNum++;
-
-                } else if (input === "scissors" && computerPick===0) {
-                    alert("Oh the agony! Scissors get destroyed by a rock.")
-                    computerScore++;
-                    roundNum++;
-
-                } else if (input === "scissors" && computerPick===1) {
-                    alert("Super easy! Scissors cut through paper.")
-                    userScore++;
-                    roundNum++;
-                }
-                
-                /*alert the state of game at the end of round 5*/
-                if (roundNum == 6) {
-                    if(userScore>computerScore) {
-                        alert("Amazing skill! You won!")
-                    }else if(computerScore>userScore) {
-                        alert("It's a shameful day. You have lost.")
-                    }else {
-                        alert("The game is a tie.")
-                }  
-            }
-        }
-        round();
-        } 
-    /*}*/
-    /*game();*/
-  </script>
 </body>
 </html>

@@ -11,56 +11,180 @@ body {
     background: linear-gradient(90deg, rgba(83,195,236,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 77%, rgba(83,195,236,1) 100%);
 }
 
+/*game start button*/
+#startBtn {
+    padding: 0.7% 3% 0.7% 3%;
+    font-family: 'Krona One', sans-serif;
+    border: 2px solid violet;
+    transition-duration: .3s;
+}
+#startBtn:hover {
+    border: 2px solid rgba(83,195,236,1);
+    background-color: rgba(83,195,236,1);
+    transition-duration: .3s;
+}
+#startBtnOff {
+    padding: 0.7% 3% 0.7% 3%;
+    font-family: 'Krona One', sans-serif;
+    border: 2px solid transparent;
+    transition-duration: .3s;
+    background-color: transparent;
+    color: transparent;
+}
+
+
+
+.choiceBtn {
+    height: 20%;
+    width: 15%;
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+}
+
 #img-div {
     text-align: center;
     margin-top: 1%;
 }
 
-img {
-    width: 15%;
+.img {
+    height: 40%;
+    width: 100%;
     border-bottom: 10px rgb(255, 255, 255) solid;
     transition-duration: 1s;
+}
+
+#yourStatus {
+    float: left;
+    margin-left: 26%;
+    color: rgb(131, 35, 131);
+    font-weight: 600;
+}
+#compStatus {
+    float: right;
+    margin-right: 26%;
+    color: rgb(12, 56, 82);
+    font-weight: 600;
 }
 
 img:hover {
     border-bottom: 10px rgb(194, 75, 194) solid;
     transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.choiceBtn:active {
+    box-shadow: violet 2px 2px 2px 2px;
+    
+}
+
+h1 {
+    margin-bottom: 1%;
+    font-size: 1.3em;
+    font-family: 'Krona One', sans-serif;
+    color: rgb(194, 75, 194);
 }
 
 #greeting {
     padding-top: 5%;
     padding-bottom: 2%;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
-h1 {
-    margin-bottom: 1%;
-    font-size: 1.9em;
-    font-family: 'Krona One', sans-serif;
-    color: rgb(194, 75, 194);
+
+
+#statusP {
+    font-weight: 600;
+}
+#statusDiv {
+    text-align: center;
+    width: 100vw;
+    margin-top: 1%;
+    padding: .5% 0% .5% 0%;
 }
 
 #scoreboard {
-    border-top: 0.5em rgb(194, 75, 194) solid;
-    border-bottom: 0.5em rgb(194, 75, 194) solid;
-    width: 12.5%;
-    padding: 1%;
-    margin-top: 5%;
-    width: 39vw;
-    margin-left: 30%;
+    font-family: 'Krona One', sans-serif;
     font-size: 1.2em;
     letter-spacing: 1px;
+    border-top: 0.3em rgb(194, 75, 194) solid;
+    border-bottom: 0.3em rgb(194, 75, 194) solid;
+    width: 39vw;
+    padding: 1%;
+    margin-top: 1%;
+    margin-left: 30%;
 }
 
 #blueSquare {
     width: 42%;
-    height: 12%;
-    margin-top: -75px;
-    margin-left: -10px;
+    height: 14%;
+    margin-top: -68px;
+    margin-left: -5px;
     background-color: rgba(36, 205, 235, 0.774);
     position: absolute;
     z-index: -1;
+}
+
+/*endgame pop-up window*/
+#popUpP {
+    font-size: 1.9em;
+    font-family: 'Krona One', sans-serif;
+    text-align: center;
+    margin-top: 5%;
+}
+#noPopUp {
+    position: fixed;
+    margin: -20% 0% 0% 39.7%;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+#popUp {
+    background-color: rgb(255, 255, 255);
+    color: rgb(150, 38, 160);
+    width: 20vw;
+    height: 20vh;
+    z-index: 1;
+    position: fixed;
+    margin: -20% 0% 0% 39.7%;
+    box-shadow: 2px 2px 2px 2px violet;
+    transition-duration: 0.1s;
+}
+#noCoverUp {
+    width: 50vw;
+    margin: -40% 0% 0% 25%;
+    position: absolute;
+    background-color: transparent;
+}
+#coverUp {
+    width: 50vw;
+    height:90vh;
+    margin: -40% 0% 0% 25%;
+    position: absolute;
+    background-color: transparent;
+    opacity: 0.5;
+    z-index: 0;
+}
+#noEndButton {
+    margin-left: 50%;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+#endButton {
+    font-size: 1.5em;
+    padding: 2%;
+    justify-self: center;
+    width: 80%;
+    margin: 10% 10% 10% 10%;
+    background-color: skyblue;
+    border-bottom: solid 5px violet;
+    z-index: 2;
+}
+#endButton:active {
+    background-color: rgb(204, 75, 230);
 }
 
 @media(max-width: 1400px) {
@@ -86,11 +210,38 @@ h1 {
         width: 55vw;
         margin-left: 20%;
     }
+
     #blueSquare {
         width: 60%;
         margin-top: -68px;
     }
+
     body {
         background: linear-gradient(90deg, rgba(83,195,236,1) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(83,195,236,1) 100%);
+    }
+    #coverUp {
+        width: 50vw;
+        height:90vh;
+        margin: -60% 0% 0% 25%;
+        z-index: 0;
+    }
+    #yourStatus {
+        float: none;
+        margin-left: 0%;
+    }
+    #compStatus {
+        float: none;
+        margin-right: 0%;
+
+    }
+    #popUp {
+
+        width: 35vw;
+        height: 20vh;
+        z-index: 1;
+        position: fixed;
+        margin: -20% 0% 0% 34%;
+        box-shadow: 2px 2px 2px 2px violet;
+        transition-duration: 0.1s;
     }
 }
